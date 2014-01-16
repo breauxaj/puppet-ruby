@@ -13,9 +13,3 @@ include ruby
 ```
 include ruby::bundler
 ```
-```
-include ruby::rails
-```
-```
-include ruby::sinatra
-```
