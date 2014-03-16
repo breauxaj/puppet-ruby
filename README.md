@@ -9,7 +9,16 @@ Samples
 -------
 ```
 include ruby
+include ruby::devel
 ```
 ```
 include ruby::bundler
 ```
+
+License
+-------
+GPL3
+
+Contact
+-------
+breauxaj AT gmail DOT com

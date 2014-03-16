@@ -1,4 +1,6 @@
-class ruby::devel {
+class ruby::devel (
+  $ensure = 'latest'
+){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => [ 'ruby-devel' ]
   }
@@ -8,7 +10,7 @@ class ruby::devel {
   }
   
   package { $required:
-    ensure  => latest,
+    ensure  => $ensure,
     require => Package[$depends],
   }
 

@@ -1,4 +1,6 @@
-class ruby {
+class ruby (
+  $ensure = 'latest'
+){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => [
       'ruby',
@@ -7,6 +9,6 @@ class ruby {
     ]
   }
 
-  package { $required: ensure => latest }
+  package { $required: ensure => $ensure }
 
 }
