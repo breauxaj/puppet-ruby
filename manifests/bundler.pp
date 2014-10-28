@@ -1,5 +1,5 @@
 class ruby::bundler (
-  $ensure = 'latest'
+  $ensure = 'installed'
 ){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'bundler',

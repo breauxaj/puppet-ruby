@@ -1,5 +1,5 @@
 class ruby::devel (
-  $ensure = 'latest'
+  $ensure = 'installed'
 ){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => [ 'ruby-devel' ]
