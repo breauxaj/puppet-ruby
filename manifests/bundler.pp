@@ -1,18 +1,10 @@
 class ruby::bundler (
   $ensure = 'installed'
-){
-  $required = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => 'bundler',
-  }
-
-  $depends = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => [ 'rubygems' ],
-  }
-
-  package { $required:
+) inherits ::ruby::params {
+  package { $::ruby::params::ruby_bundler:
     ensure   => $ensure,
     provider => gem,
-    require  => Package[$depends]
+    require  => Package[$::ruby::params::ruby_package]
   }
 
 }

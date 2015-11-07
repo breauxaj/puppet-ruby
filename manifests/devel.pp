@@ -1,17 +1,9 @@
 class ruby::devel (
   $ensure = 'installed'
-){
-  $required = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => [ 'ruby-devel' ]
-  }
-
-  $depends = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => [ 'ruby' ],
-  }
-
-  package { $required:
+) inherits ::ruby::params {
+  package { $::ruby::params::ruby_devel:
     ensure  => $ensure,
-    require => Package[$depends],
+    require => Package[$::ruby::params::ruby_package]
   }
 
 }

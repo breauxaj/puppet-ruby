@@ -1,14 +1,8 @@
 class ruby (
   $ensure = 'installed'
-){
-  $required = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => [
-      'ruby',
-      'ruby-rdoc',
-      'rubygems'
-    ]
+) inherits ::ruby::params {
+  package { $::ruby::params::ruby_package:
+    ensure  => $ensure,
   }
-
-  package { $required: ensure => $ensure }
 
 }
