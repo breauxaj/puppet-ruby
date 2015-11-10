@@ -12,7 +12,6 @@ class ruby::params {
 
           $ruby_package = [
             'ruby',
-            'ruby-doc',
             'rubygems'
           ]
         }
